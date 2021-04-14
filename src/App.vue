@@ -195,6 +195,16 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  @media (max-width: 768px){
+    width: 100%;
+    height: max-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &>div{
+      margin-bottom: 20px;
+    }
+  }
   &__hotel{
     display: flex;
     flex-direction: column;
