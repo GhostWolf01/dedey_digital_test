@@ -12,9 +12,9 @@
     <label class="block__arrivall-content">
       <img class="block__arrivall-img" src="./assets/images/imgDate.png" alt="mapDate">
       <select class="block__arrivall-date" name="number" v-model="actDay1">
-        <option v-for="day in mounths[activeMounth-1].days" :key="day" :value="day">{{day}}</option>
+        <option v-for="day in mounths[activeMounth1-1].days" :key="day" :value="day">{{day}}</option>
       </select>
-      <select class="block__arrivall-date" name="mounth" v-model="activeMounth">
+      <select class="block__arrivall-date" name="mounth" v-model="activeMounth1">
         <option v-for="mounth in mounths" :key="mounth.id" :value="mounth.id">{{mounth.name}}</option>
       </select>
     </label>
@@ -23,9 +23,9 @@
     <p class="block__departure-text">Выезд</p>
     <label class="block__departure-content">
       <select class="block__departure-date" name="number" v-model="actDay2">
-        <option v-for="day in mounths[activeMounth-1].days" :key="day" :value="day">{{day}}</option>
+        <option v-for="day in mounths[activeMounth2-1].days" :key="day" :value="day">{{day}}</option>
       </select>
-      <select class="block__departure-date" name="mounth" v-model="activeMounth">
+      <select class="block__departure-date" name="mounth" v-model="activeMounth2">
         <option v-for="mounth in mounths" :key="mounth.id" :value="mounth.id">{{mounth.name}}</option>
       </select>
     </label>
@@ -75,7 +75,8 @@ export default {
   name: 'App',
   data() {
     return {
-      activeMounth: 2,
+      activeMounth1: 2,
+      activeMounth2: 2,
       actDay1: "07",
       actDay2: 22,
       mounths: [
